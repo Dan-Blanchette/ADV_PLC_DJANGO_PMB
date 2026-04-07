@@ -1,0 +1,19 @@
+{% extends "database_manager/base.html" %}
+
+{% block title %}
+    Tag Details
+{% endblock %}
+
+{% block content %}
+    <h1>{{ tag.get_reg_type_display }}</h1>
+
+    <p><strong>ID:</strong> {{ tag.id }}</p>
+    <p><strong>Register Type:</strong> {{ tag.get_reg_type_display }}</p>
+    <p><strong>Timestamp:</strong> {{ tag.timestamp }}</p>
+    <p><strong>Data:</strong></p>
+    <pre>{{ tag.data|safe }}</pre>
+
+    <p>
+        <a href="{% url 'database_manager:index' %}">Back to All Tags</a>
+    </p>
+{% endblock %}

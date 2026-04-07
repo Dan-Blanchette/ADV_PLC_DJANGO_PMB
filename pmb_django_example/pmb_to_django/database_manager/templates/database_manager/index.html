@@ -1,0 +1,15 @@
+{% extends "database_manager/base.html" %}
+
+{% block title %}
+    All Tags
+{% endblock %}
+
+{% block content %}
+    <ul>
+       {% for tag in tags %}
+       <li>
+           <a href="{{ tag.get_absolute_url }}">{{ tag.get_reg_type_display }}</a>
+       </li>
+       {% endfor %}
+    </ul>
+{% endblock %}
