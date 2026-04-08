@@ -15,9 +15,9 @@ class Command(BaseCommand):
     async def run_modbus(self):
         reg_types = ["coils", "hr"]
         mb_start_address = 0
-        coils_to_read = 10
-        hr_to_read = 10
-        index = []
+        coils_to_read = 10 # address space range from starting register
+        hr_to_read = 10 # address space range from starting register
+        
 
 
         plc_client = AsyncModbusTcpClient("127.0.0.1", port=5020)
@@ -28,24 +28,19 @@ class Command(BaseCommand):
         hr_data = await mb_client(plc_client, DEVICE_ID, mb_start_address, hr_to_read, reg_types[1])
         
 
-        # SAVE COIL DATA
+        # SAVE COIL DATA TO DB acreate() = async entries to your database
         await PLC_Tags.objects.acreate(
             reg_type = 0,
             data=coil_data
         )
 
-        # SAVE HOLDING REGISTER DATA
+        # SAVE HOLDING REGISTER DATA TO DB
         await PLC_Tags.objects.acreate(
             reg_type = 1,
             data=hr_data
         )
 
-        
-
-        # # we assign our information the tags and values JSONField()
-        # # tags_and_values
-        # await PLC_Tags.objects.acreate(tags_and_values=db_entries)
-
+		  # Debug Print Statement on success
         # self.stdout.write(
         #     self.style.SUCCESS(f"Saved PLC data: {db_entries}")
         # )

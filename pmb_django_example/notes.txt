@@ -1,0 +1,19 @@
+NOTES
+
+Django Commands Creation Steps
+
+1. create management folder
+2. create __init__.py
+3. create commands folder
+4. create __init__.py
+5. create command script
+   - Show command script structure.
+
+
+Register your model with admin
+
+- This allows your Django admin page to "find your database."
+- Create a superuser so you can check your database in Django
+    - python manage.py createsuperuser demo
+
+

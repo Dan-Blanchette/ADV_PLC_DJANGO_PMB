@@ -1,0 +1,15 @@
+Timer Enables:
+sudo systemctl enable --now pmb-test.timer
+
+Check Timer Status:
+sudo systemctl status pmb-test.timer --no-pager -l
+
+Service Enable:
+sudo systemctl start pmb-test.service
+
+
+Check Service Status:
+sudo systemctl status pmb-test.service
+
+Do This After Enabling Serivces and Timer:
+sudo systemctl daemon-reload
