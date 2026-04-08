@@ -14,6 +14,6 @@ Register your model with admin
 
 - This allows your Django admin page to "find your database."
 - Create a superuser so you can check your database in Django
-    - python manage.py createsuperuser demo
+    - python manage.py createsuperuser
 
 
