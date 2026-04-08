@@ -1,0 +1,18 @@
+[Unit]
+Description=Run Django management command sysD_test
+After=network.target
+
+[Service]
+Type=oneshot
+User=plcman22
+Group=plcman22
+
+WorkingDirectory=/home/plcman22/Desktop/ADV_PLC_DJANGO_PMB/pmb_django_example/pmb_to_django
+
+ExecStart=/home/plcman22/Desktop/ADV_PLC_DJANGO_PMB/pmb_django_example/myenv/bin/python /home/plcman22/Desktop/ADV_PLC_DJANGO_PMB/pmb_django_example/pmb_to_django/manage.py sysD_test
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

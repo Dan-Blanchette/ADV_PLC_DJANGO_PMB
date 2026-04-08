@@ -1,9 +1,14 @@
-from pymodbus.client import AsyncModbusTcpClient
+
 from django.core.management.base import BaseCommand
+# Django Database Model
 from ...models import PLC_Tags
+
+# Helper function for client data
 from ...pmb_client import mb_client
-import pandas as pd
+
+# Async updating and request handling
 import asyncio
+from pymodbus.client import AsyncModbusTcpClient
 
 DEVICE_ID = 1
 

@@ -1,0 +1,12 @@
+[Unit]
+Description=Runs pmb-test.service every 10 seconds
+
+[Timer]
+# every day, every hour, every minute, for seconds run every X seconds where remainder = 0
+OnCalendar=*-*-* *:*:0/10
+Accuracy=1s
+Persistent=True
+Unit=pmb-test.service
+
+[Install]
+WantedBy=timers.target
