@@ -45,7 +45,7 @@ class Command(BaseCommand):
             data=hr_data
         )
 
-		  # Debug Print Statement on success
+		  # Debug Print Statement
         # self.stdout.write(
         #     self.style.SUCCESS(f"Saved PLC data: {db_entries}")
         # )
