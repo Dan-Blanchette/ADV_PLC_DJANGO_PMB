@@ -4,12 +4,12 @@ After=network.target
 
 [Service]
 Type=oneshot
-User=plcman22
-Group=plcman22
+User=linux_user_name
+Group=linux_user_name
 
-WorkingDirectory=/home/plcman22/Desktop/ADV_PLC_DJANGO_PMB/pmb_django_example/pmb_to_django
+WorkingDirectory=/home/user/Desktop/ADV_PLC_DJANGO_PMB/pmb_django_example/pmb_to_django
 
-ExecStart=/home/plcman22/Desktop/ADV_PLC_DJANGO_PMB/pmb_django_example/myenv/bin/python /home/plcman22/Desktop/ADV_PLC_DJANGO_PMB/pmb_django_example/pmb_to_django/manage.py sysD_test
+ExecStart=/home/user/Desktop/ADV_PLC_DJANGO_PMB/pmb_django_example/myenv/bin/python /home/plcman22/Desktop/ADV_PLC_DJANGO_PMB/pmb_django_example/pmb_to_django/manage.py sysD_test
 
 StandardOutput=journal
 StandardError=journal
